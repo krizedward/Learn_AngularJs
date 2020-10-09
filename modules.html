@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Belajar Modules AngularJs</title>
+    <!--Js-->
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+</head>
+
+<body>
+  <h2>Belajar Tahap Membuat Modules</h2>
+  <p>===============================</p>
+  <!--Menampilkan Controller Di Html-->
+  <div ng-app="myApp" ng-controller="myCtrl">
+    {{ firstname + " " + lastname }}
+  </div>
+  <!--Derective atau mengarahkan ke dengan function-->
+  <p>===============================</p>
+  <div ng-app="myDir" w3-test-directive>
+    
+  </div>
+</body>
+<!--Membuat Directive-->
+<script type="text/javascript" charset="utf-8">
+  
+  var app = angular.module("myDir",[]);
+  
+  app.directive("w3TestDirective", function() {
+    return {
+      template : "I was made in a directive constructor!"
+    };
+  });
+</script>
+<!--gagal-->
+
+<!--Membuat Controller-->
+<script type="text/javascript" charset="utf-8">
+  //membuat modul dengan menggunakan fungsi angular.module
+  var app = angular.module("myApp", []);
+
+  //membuat controller dengan merujuk ke ng-controller
+  app.controller("myCtrl", function($scope) {
+    $scope.firstname = "kriz";
+    $scope.lastname = "edward";
+  });
+</script>
+</html>
