@@ -1,14 +1,37 @@
 <!DOCTYPE html>
-<html>
+<!--Jangan Lupa Di Beri "ng-app" untuk angularjs-->
+<html ng-app>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Halaman Index AngularJs</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
 </head>
 
 <body>
   <h1>Hello World</h1>
+  
+  <!--Cara Pertama Menggunakan AngularJs-->
+  {{ "Tutorial angularJs | kriz_edward" }}
+  <br />
+  {{ 25 + 25 }}
+  <p>------------------------------------</p>
+  
+  <!--AngularJs Expressions-->
+  <div ng-init="myCol = 'lightblue'">
+    <input style="background-color: {{myCol}}" ng-model="myCol" />
+  </div>
+  
+  <p>------------------------------------</p>
+  
+  <div ng-init="quantity=1;cost=5">
+    <p>Total in Dollar:{{ quantity * cost }}</p>
+  </div>
+  <!--ng-bind dengan {{ }} itu sama seperti printf-->
+  <div ng-init="points=[1,2,3,4,5]">
+    <p>Total in Dollar: <span ng-bind="points[2]"></span></p>
+  </div>  
 </body>
 
 </html>
